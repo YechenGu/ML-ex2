@@ -29,9 +29,9 @@ for i = 1:a
     h2(i,j) = log(h2(i,j));
   endfor
 endfor
-part1 = - y' * log(h1);
-part2 = (y' - 1) * log(h2);
-J = (part1 + part2) / m;
+part1 = - y' * h1;
+part2 = (1- y)' * h2;
+J = (part1 - part2) / m;
 
 grad = X' * (sigmoid(X * theta) - y) / m;
 
